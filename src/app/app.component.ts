@@ -25,11 +25,11 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-        this.af.collection('Shaikh').add({
-            token:'asdas'
-          }).catch(error=>{
-            // this.presentToast(error);
-          });
+        // this.af.collection('Shaikh').add({
+        //     token:'asdas'
+        //   }).catch(error=>{
+        //     // this.presentToast(error);
+        //   });
           
     });
   }

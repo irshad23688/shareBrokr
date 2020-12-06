@@ -1,0 +1,69 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>trade</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid class="ionGrid">
+    <ion-row>
+      <ion-col size="2">
+          <ion-icon class="sideMenuIcon" name="menu-outline"></ion-icon>
+      </ion-col>
+      <ion-col>
+          <ion-searchbar (input)="searchValue($event)"></ion-searchbar>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <super-tabs class="selection" activeTabIndex="0" #superTabs [config]="{nativeSmoothScroll: true}"
+    (tabChange)="onTabChange($event)">
+    <super-tabs-toolbar class="sss">
+      <super-tab-button #tabBtn>
+        <ion-label class="lable">Holdings</ion-label>
+      </super-tab-button>
+      <super-tab-button>
+        <ion-label class="lable">Positions</ion-label>
+      </super-tab-button>
+      <super-tab-button>
+        <ion-label class="lable">Watchlist</ion-label>
+      </super-tab-button>
+    </super-tabs-toolbar>
+    <super-tabs-container>
+      <super-tab>
+        <ion-content>
+          <ion-grid>
+            <ion-row>
+                <input class="search" (input)="searchValue($event)">
+                <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
+            </ion-row>
+          </ion-grid>
+          <div class="test">
+            Hello1
+          </div>
+        </ion-content>
+      </super-tab>
+      <super-tab>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <input class="search" (input)="searchValue($event)">
+                    <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
+                  </ion-row>
+              </ion-grid>
+        </ion-content>
+      </super-tab>
+      <super-tab>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <input class="search" (input)="searchValue($event)">
+                    <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
+                  </ion-row>
+              </ion-grid>
+                    </ion-content>
+      </super-tab>
+    </super-tabs-container>
+  </super-tabs>
+</ion-content>

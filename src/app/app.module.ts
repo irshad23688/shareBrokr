@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,9 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SuperTabsModule.forRoot(),
+
   ],
   providers: [
     StatusBar,
