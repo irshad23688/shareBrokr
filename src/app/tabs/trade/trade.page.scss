@@ -1,38 +1,51 @@
-super-tabs-toolbar{
+super-tabs-toolbar {
     z-index: 0 !important;
     display: unset !important;
 }
-super-tabs{
+
+super-tabs {
     display: inline !important;
     border: none !important;
 }
+
 // super-tabs:active{
 //     text-decoration-line: underline !important;
 // }
 
+ion-content {
+    --ion-background-color:#efefef;
+}
 
-.lable{
+.lable {
     text-transform: none;
 }
-super-tab-button.active{
+
+super-tab-button.active {
     color: blue !important;
     // text-decoration-line: underline !important;
-    border-bottom: 2px solid blue !important; 
-    padding-bottom: 1px !important;
+    border-bottom: 4px solid blue !important;
+    // padding-bottom: 1px !important;
 }
-.ionGrid{
+
+.ionGrid {
     background-color: #0061e7;
 }
+
 .searchbar-input {
     border-radius: 12px !important;
+    background-color: white !important;
+
 }
-.searchbar-input.sc-ion-searchbar-md{
+
+.searchbar-input.sc-ion-searchbar-md {
     height: 30px !important;
 }
+
 .searchbar-search-icon.sc-ion-searchbar-md {
     top: 6px !important;
 }
-.sideMenuIcon{
+
+.sideMenuIcon {
     color: white;
     width: 43px;
     height: 43px;
@@ -40,7 +53,7 @@ super-tab-button.active{
     position: absolute;
 }
 
-.search{
+.search {
     width: 84%;
     padding-left: 34px;
     margin: 5px auto;
@@ -48,8 +61,44 @@ super-tab-button.active{
     border: 1px solid grey;
     border-radius: 11px;
 }
-.searchIcon{
+
+.searchIcon {
     left: 28px !important;
     position: absolute !important;
     top: 19px !important;
+}
+.searchTopIcon{
+    left: 14px !important;
+    position: absolute !important;
+    top: 19px !important;
+}
+
+ion-card {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 0px;
+    
+}
+.ionSearchgrid{
+    width: 95%;
+
+}
+
+.stockName {
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+}
+
+.header {
+    opacity: 0.7;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.subheader {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: bold;
 }

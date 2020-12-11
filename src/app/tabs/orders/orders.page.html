@@ -1,9 +1,61 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>orders</ion-title>
+    <ion-title>trade</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<ion-content fullscreen scroll="true" padding="false">
 
-</ion-content>
+    <ion-grid class="ionGrid">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon class="sideMenuIcon" name="menu-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+            <input class="search" placeholder="Search">
+            <ion-icon  class="searchTopIcon" name="search-outline"></ion-icon>
+              <!-- <ion-searchbar></ion-searchbar> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <super-tabs class="selection" activeTabIndex="0" #superTabs [config]="{nativeSmoothScroll: true}"
+      (tabChange)="onTabChange($event)">
+      <super-tabs-toolbar class="sss">
+        <super-tab-button #tabBtn>
+          <ion-label class="lable">Pending</ion-label>
+        </super-tab-button>
+        <super-tab-button>
+          <ion-label class="lable">Completed</ion-label>
+        </super-tab-button>
+        
+      </super-tabs-toolbar>
+      <super-tabs-container>
+        <super-tab>
+  
+          <ion-content>
+            <!-- <ion-infinite-scroll> -->
+              <!-- <ion-infinite-scroll-content loadingSpinner=false style="text-align:left;justify-content: left"> -->
+                  <app-pending></app-pending>
+
+              <!-- </ion-infinite-scroll-content>
+            </ion-infinite-scroll> -->
+          </ion-content>
+  
+        </super-tab>
+        <super-tab>
+          <ion-content>
+              <app-completed></app-completed>
+
+  
+          </ion-content>
+        </super-tab>
+       
+      </super-tabs-container>
+    </super-tabs>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button  routerDirection="forward">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        </ion-fab>
+  </ion-content>

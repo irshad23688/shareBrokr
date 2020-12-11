@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content loadingSpinner=false style="text-align:left;justify-content: left">
+      <ion-grid class="ionSearchgrid">
+        <ion-row>
+          <input class="search" [(ngModel)]="term" placeholder="Search">
+          <ion-icon class="searchIcon" name="search-outline"></ion-icon>
+        </ion-row>
+        <ion-row>
+          <ion-card *ngFor="let hold of holdings ">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <span class="stockName">{{hold.stockName}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <span class="header">Quantity</span><br>
+                  <span class="subheader">{{hold.quantity}}</span>
+                </ion-col>
+                <ion-col>
+                  <span class="header">Last Traded Price</span><br>
+                  <span class="subheader">{{hold.lastTradedPrice}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <span class="header">Exchange</span><br>
+                  <span class="subheader">{{hold.exchange}}</span>
+                </ion-col>
+                <ion-col>
+                  <span class="header">Total Invested</span><br>
+                  <span class="subheader">{{hold.totalInvested}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

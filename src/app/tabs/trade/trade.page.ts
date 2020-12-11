@@ -9,7 +9,94 @@ declare var $:any;
   encapsulation: ViewEncapsulation.Native
 })
 export class TradePage implements OnInit {
- 
+  term;
+  holdings=[{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"BSE",
+    totalInvested:31400
+  },
+  {
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  }
+];
+  positions=[{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },
+  {
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  },{
+    stockName: "Stock Name",
+    quantity: 1000,
+    lastTradedPrice:"3.14 (0.14%)",
+    exchange:"NSE",
+    totalInvested:31400
+  }
+]
+watchList=[{
+  stockName: "Stock Name",
+  lastTradedPrice:"3.14 (0.14%)",
+  exchange:"NSE",
+},
+{
+  stockName: "Stock Name",
+  lastTradedPrice:"3.14 (0.14%)",
+  exchange:"NSE",
+},
+{
+  stockName: "Stock Name",
+  lastTradedPrice:"3.14 (0.14%)",
+  exchange:"NSE",
+},
+{
+  stockName: "Stock Name",
+  lastTradedPrice:"3.14 (0.14%)",
+  exchange:"NSE",
+},
+]
   activeTabIndex: number;
  
   @ViewChild('superTabs', { read: SuperTabs }) st: SuperTabs;
@@ -33,9 +120,15 @@ export class TradePage implements OnInit {
 
     this.st.selectTab(index, true);
   }
-  searchValue(e) {
-    console.log(e.data);
+ 
+  // searchValue(searchTerm) {
+  //   const filteredItems = this.positions.filter(item => {
+  //       // Apply filters
+  //   });
+  //   return filteredItems.filter(item => {
+  //     return filteredItems..toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+  //   });
+  // }
 
-  }
 
 }

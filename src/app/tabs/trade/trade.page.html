@@ -4,15 +4,17 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content>
+<ion-content fullscreen scroll="true" padding="false">
+
   <ion-grid class="ionGrid">
     <ion-row>
       <ion-col size="2">
-          <ion-icon class="sideMenuIcon" name="menu-outline"></ion-icon>
+        <ion-icon class="sideMenuIcon" name="menu-outline"></ion-icon>
       </ion-col>
       <ion-col>
-          <ion-searchbar (input)="searchValue($event)"></ion-searchbar>
-
+          <input class="search" placeholder="Search">
+          <ion-icon  class="searchTopIcon" name="search-outline"></ion-icon>
+            <!-- <ion-searchbar></ion-searchbar> -->
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -32,38 +34,136 @@
     </super-tabs-toolbar>
     <super-tabs-container>
       <super-tab>
+
         <ion-content>
-          <ion-grid>
+          <ion-infinite-scroll>
+            <ion-infinite-scroll-content loadingSpinner=false style="text-align:left;justify-content: left">
+              <ion-grid class="ionSearchgrid">
+                <ion-row>
+                  <input class="search" placeholder="Search" [(ngModel)]="term">
+                  <ion-icon  class="searchIcon" name="search-outline"></ion-icon>
+                </ion-row>
+                <ion-row>
+
+                  <ion-card *ngFor="let hold of holdings | filter:term">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <span class="stockName">{{hold.stockName}}</span>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col>
+                          <span class="header">Quantity</span><br>
+                          <span class="subheader">{{hold.quantity}}</span>
+                        </ion-col>
+                        <ion-col>
+                          <span class="header">Last Traded Price</span><br>
+                          <span class="subheader">{{hold.lastTradedPrice}}</span>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col>
+                          <span class="header">Exchange</span><br>
+                          <span class="subheader">{{hold.exchange}}</span>
+                        </ion-col>
+                        <ion-col>
+                          <span class="header">Total Invested</span><br>
+                          <span class="subheader">{{hold.totalInvested}}</span>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+
+                  </ion-card>
+
+                </ion-row>
+              </ion-grid>
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </ion-content>
+
+      </super-tab>
+      <super-tab>
+        <ion-content>
+          <ion-grid class="ionSearchgrid">
             <ion-row>
-                <input class="search" (input)="searchValue($event)">
-                <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
+              <input class="search" placeholder="Search">
+              <ion-icon class="searchIcon" name="search-outline"></ion-icon>
+            </ion-row>
+            <ion-row>
+              <ion-card *ngFor="let hold of positions">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <span class="stockName">{{hold.stockName}}</span>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <span class="header">Quantity</span><br>
+                      <span class="subheader">{{hold.quantity}}</span>
+                    </ion-col>
+                    <ion-col>
+                      <span class="header">Last Traded Price</span><br>
+                      <span class="subheader">{{hold.lastTradedPrice}}</span>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <span class="header">Exchange</span><br>
+                      <span class="subheader">{{hold.exchange}}</span>
+                    </ion-col>
+                    <ion-col>
+                      <span class="header">Total Invested</span><br>
+                      <span class="subheader">{{hold.totalInvested}}</span>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+              </ion-card>
             </ion-row>
           </ion-grid>
-          <div class="test">
-            Hello1
-          </div>
+
         </ion-content>
       </super-tab>
       <super-tab>
         <ion-content>
-            <ion-grid>
-                <ion-row>
-                    <input class="search" (input)="searchValue($event)">
-                    <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
+          <ion-grid class="ionSearchgrid">
+            <ion-row>
+              <input class="search" placeholder="Search">
+              <ion-icon class="searchIcon" name="search-outline"></ion-icon>
+            </ion-row>
+            <ion-row>
+              <ion-card *ngFor="let hold of watchList">
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <span class="stockName">{{hold.stockName}}</span>
+                    </ion-col>
+                    <ion-col>
+                      <span class="subheader">{{hold.lastTradedPrice}}</span>
+                    </ion-col>
                   </ion-row>
-              </ion-grid>
+
+                  <ion-row>
+                    <ion-col>
+                      <span class="subheader">{{hold.exchange}}</span>
+                    </ion-col>
+
+                  </ion-row>
+                </ion-grid>
+
+              </ion-card>
+            </ion-row>
+          </ion-grid>
+
         </ion-content>
-      </super-tab>
-      <super-tab>
-        <ion-content>
-            <ion-grid>
-                <ion-row>
-                    <input class="search" (input)="searchValue($event)">
-                    <ion-icon placeholder="Search" class="searchIcon" name="search-outline"></ion-icon>
-                  </ion-row>
-              </ion-grid>
-                    </ion-content>
       </super-tab>
     </super-tabs-container>
   </super-tabs>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  routerDirection="forward">
+          <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
 </ion-content>

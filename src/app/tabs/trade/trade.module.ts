@@ -8,6 +8,7 @@ import { TradePageRoutingModule } from './trade-routing.module';
 
 import { TradePage } from './trade.page';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
     IonicModule,
     TradePageRoutingModule,
     SuperTabsModule,
-
+    Ng2SearchPipeModule
 
   ],
   declarations: [TradePage]

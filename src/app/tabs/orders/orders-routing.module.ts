@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: OrdersPage
+  },
+  {
+    path: 'completed',
+    loadChildren: () => import('./completed/completed.module').then( m => m.CompletedPageModule)
+  },
+  {
+    path: 'pending',
+    loadChildren: () => import('./pending/pending.module').then( m => m.PendingPageModule)
   }
 ];
 
